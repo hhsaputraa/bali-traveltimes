@@ -17,15 +17,15 @@ const Button = React.forwardRef(({
 }, ref) => {
   
   // Base classes for consistent sizing, transitions, focus rings
-  const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
+  const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
 
   // Style variants mapping
   const variants = {
-    default: "bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/20",
+    default: "bg-primary-900 text-white hover:bg-primary-950 hover:shadow-lg hover:shadow-primary-900/20",
     secondary: "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700",
     outline: "border border-zinc-300 bg-transparent text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900",
     ghost: "bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-700 dark:text-zinc-300",
-    link: "text-emerald-600 underline-offset-4 hover:underline bg-transparent p-0 active:scale-100",
+    link: "text-primary-600 underline-offset-4 hover:underline bg-transparent p-0 active:scale-100",
     danger: "bg-rose-600 text-white hover:bg-rose-700 hover:shadow-lg hover:shadow-rose-600/20",
   };
 

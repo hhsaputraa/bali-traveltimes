@@ -1,75 +1,75 @@
-/**
- * GROQ Queries for fetching content from Sanity.
- * Centralizing queries ensures reusable fetching logic across pages.
- */
+import { defineQuery } from "next-sanity";
 
-// Fetch all tours with essential list-view details
-export const allToursQuery = `
-  *[_type == "tour"] | order(title asc) {
+// Ambil semua tour (untuk homepage grid)
+export const ALL_TOURS_QUERY = defineQuery(`
+  *[_type == "tour"] | order(_createdAt desc) {
     _id,
     title,
-    "slug": slug.current,
+    slug,
+    category,
+    isFeatured,
     description,
-    mainImage {
-      asset->{
-        _id,
-        url
-      },
-      alt
-    },
-    price,
-    duration,
-    difficulty,
-    location,
-    rating
-  }
-`;
-
-// Fetch single tour detail using its slug
-export const tourBySlugQuery = `
-  *[_type == "tour" && slug.current == $slug][0] {
-    _id,
-    title,
-    "slug": slug.current,
-    description,
-    content,
-    mainImage {
-      asset->{
-        _id,
-        url
-      },
-      alt
-    },
-    gallery[] {
-      asset->{
-        _id,
-        url
-      },
-      alt
-    },
     price,
     duration,
     difficulty,
     location,
     rating,
-    travelTimes[] {
-      destination,
-      durationMinutes
-    },
-    itinerary[] {
-      day,
-      title,
-      activities[]
-    }
+    mainImage,
+    highlights
   }
-`;
+`);
 
-// Fetch all categories
-export const categoriesQuery = `
-  *[_type == "category"] {
+// Ambil featured tours saja (untuk homepage hero section)
+export const FEATURED_TOURS_QUERY = defineQuery(`
+  *[_type == "tour" && isFeatured == true] | order(_createdAt desc) {
     _id,
     title,
-    "slug": slug.current,
-    description
+    slug,
+    category,
+    description,
+    price,
+    duration,
+    location,
+    rating,
+    mainImage
   }
-`;
+`);
+
+// Ambil 1 tour berdasarkan slug (untuk halaman detail)
+export const TOUR_BY_SLUG_QUERY = defineQuery(`
+  *[_type == "tour" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    category,
+    description,
+    content,
+    price,
+    duration,
+    difficulty,
+    location,
+    rating,
+    mainImage,
+    gallery,
+    highlights,
+    includes,
+    excludes,
+    itinerary,
+    whatsappNumber
+  }
+`);
+
+// Ambil tour berdasarkan kategori (untuk filter)
+export const TOURS_BY_CATEGORY_QUERY = defineQuery(`
+  *[_type == "tour" && category == $category] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    description,
+    price,
+    duration,
+    location,
+    rating,
+    mainImage
+  }
+`);

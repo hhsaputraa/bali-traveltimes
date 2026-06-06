@@ -1,29 +1,31 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { SITE_CONFIG } from "@/constants/navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata = {
-  title: `${SITE_CONFIG.name} - Panduan Perjalanan & Estimasi Waktu Wisata Bali`,
-  description: SITE_CONFIG.description,
+  title: "Bali Travel Times | Private Tour Guide & Car Rental Ubud Bali",
+  description: "Discover the best of Bali with Bali Travel Times. Professional English-speaking private driver, curated tour packages, activities, and affordable car hire with no deposit.",
   metadataBase: new URL(SITE_CONFIG.url),
   openGraph: {
-    title: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
+    title: "Bali Travel Times | Private Tour Guide & Car Rental Ubud Bali",
+    description: "Discover the best of Bali with Bali Travel Times. Professional English-speaking private driver, curated tour packages, activities, and affordable car hire with no deposit.",
     url: SITE_CONFIG.url,
-    siteName: SITE_CONFIG.name,
-    locale: "id_ID",
+    siteName: "Bali Travel Times",
+    locale: "en_US",
     type: "website",
   },
 };
@@ -31,10 +33,10 @@ export const metadata = {
 export default function SiteLayout({ children }) {
   return (
     <html
-      lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      lang="en"
+      className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {/* Public site global navigation */}
         <Navbar />
         
