@@ -27,22 +27,31 @@ export default async function Home() {
       {/* Intro Hero Banner */}
       <Hero />
 
+      {/* Private Car Rental Services */}
+      <CarRental />
+
       {/* Signature Tours Section */}
       <section id="tours" className="py-24 bg-background">
         <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl">
-          
+
           {/* Section Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-xs font-semibold text-primary-900 uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Curated Experiences</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 pb-8 border-b border-zinc-200/40">
+            <div className="lg:col-span-5 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-xs font-semibold text-primary-900 uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Curated Experiences</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-serif font-black text-primary-950 leading-tight">
+                Bali Tour Packages
+              </h2>
+              <div className="h-1.5 w-16 bg-accent-600 rounded-full" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary-950">
-              Signature Bali Tour Packages
-            </h2>
-            <p className="text-sm md:text-base text-zinc-600 leading-relaxed font-light">
-              Handcrafted private itineraries designed to show you the best of Bali&apos;s culture, temples, nature, and photogenic wonders.
-            </p>
+            
+            <div className="lg:col-span-7 lg:pl-6">
+              <p className="text-sm md:text-base text-zinc-600 leading-relaxed font-light">
+                To satisfy a wide range of tastes and interests, we offer a selection of tours. We provide a variety of activities, such as exhilarating outdoor sports and excursions with breathtaking vistas. Thanks to the expertise and experience of our experienced guides, your tour will be full with treasured memories, fascinating insights into the local way of life, and plenty of photo possibilities. Whether you’re traveling with friends, family, or alone, our tours are made to be safe, comfortable, and tailored to your individual needs. So relax, take a seat, and let us handle the rest. Make your tour reservation as soon as possible to begin an experience unlike any other.
+              </p>
+            </div>
           </div>
 
           {/* Tours Grid */}
@@ -53,8 +62,8 @@ export default async function Home() {
               </div>
             ) : (
               tours.map((tour) => (
-                <div 
-                  key={tour._id} 
+                <div
+                  key={tour._id}
                   className="group flex flex-col bg-white border border-zinc-200/60 rounded-2xl overflow-hidden hover:shadow-xl hover:border-zinc-300 transition-all duration-300"
                 >
                   {/* Image Container with mainImage from Sanity */}
@@ -115,8 +124,8 @@ export default async function Home() {
                           <span className="text-[10px] text-zinc-500"> / pax</span>
                         </div>
                         <Link href={`/tour/${tour.slug?.current}`}>
-                          <Button 
-                            className="bg-primary-900 hover:bg-primary-950 text-white group/btn rounded-xl px-4 py-2.5 text-xs font-semibold flex items-center gap-1.5 transition-all"
+                          <Button
+                            className="bg-primary-900 hover:bg-primary-950 text-white group/btn rounded-xl px-4 py-2.5 text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer"
                             size="sm"
                           >
                             <span>View Details</span>
@@ -133,8 +142,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Private Car Rental Services */}
-      <CarRental />
+
 
       {/* Top Activities / Things to Do */}
       <Activities />

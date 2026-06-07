@@ -29,3 +29,36 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+@keyframes soundWave {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; }
+}
+
+.animate-sound-wave-1 {
+  animation: soundWave 0.8s ease-in-out infinite;
+}
+.animate-sound-wave-2 {
+  animation: soundWave 1.2s ease-in-out infinite;
+  animation-delay: 0.15s;
+}
+.animate-sound-wave-3 {
+  animation: soundWave 0.9s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+.animate-sound-wave-4 {
+  animation: soundWave 1.1s ease-in-out infinite;
+  animation-delay: 0.45s;
+}
+
+/* Force cursor pointer on all interactive elements */
+button,
+select,
+input[type="submit"],
+a,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+

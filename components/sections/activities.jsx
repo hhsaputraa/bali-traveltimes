@@ -70,7 +70,6 @@ export function Activities() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-xs font-semibold text-primary-900 uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Things to Do</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary-950">
