@@ -151,7 +151,7 @@ export function Hero() {
                 {/* Submit Action */}
                 <Button
                   type="submit"
-                  className="w-full bg-accent-600 text-white hover:bg-accent-700 hover:shadow-lg hover:shadow-accent-600/20 py-6 mt-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200"
+                  className="w-full bg-accent-600 text-white hover:bg-accent-700 hover:shadow-lg hover:shadow-accent-600/20 py-6 mt-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer"
                 >
                   Book via WhatsApp
                 </Button>
